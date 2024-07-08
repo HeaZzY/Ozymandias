@@ -27,7 +27,6 @@ banner = f""" {RED}_____                                                   __
 
 print(banner)
 
-# Clé AES (32 bytes de long)
 
 key = b'V\xff&2\xf7[\xb4O\x98\rYx\xb5\x88#M\xc2\xc7\x8b,\xc07Y.)\xfc\xf5\xc1\xd8p\xcf\xd4'
 
