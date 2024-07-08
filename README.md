@@ -7,6 +7,9 @@ This project consists of a reverse shell implementation, including a client and 
 This project is for educational purposes only. Misuse of this software can lead to legal consequences. Use responsibly and only on systems you have explicit permission to access.
 
 
+## Download<br/>
+`git clone https://github.com/HeaZzY/Ozymandias.git`<br/>
+
 ## Features
 
 Encrypted communication using a simple XOR-based method
