@@ -71,3 +71,6 @@ Security network tools often detect typical commands and responses of a reverse 
 
 ![image](https://github.com/HeaZzY/Ozymandias/assets/80423488/6a81b840-30f7-4185-bd70-9a040daae598)
 
+## Work in Progress
+Please note that this project is currently a work in progress and may still contain some bugs. I am actively working on improving its stability and functionality. Your feedback and suggestions are greatly appreciated as we continue to develop and enhance the features of this reverse shell implementation.
+
