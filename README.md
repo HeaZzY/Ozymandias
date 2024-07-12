@@ -8,7 +8,9 @@ This project is for educational purposes only. Misuse of this software can lead 
 
 
 ## Download<br/>
-`git clone https://github.com/HeaZzY/Ozymandias.git`<br/>
+```bash
+git clone https://github.com/HeaZzY/Ozymandias.git`
+```
 
 ## Features
 
@@ -27,9 +29,15 @@ Clone the repository or download the project files.
 
 ### Install the required dependencies:
 
-`pip install pycryptodome pypiwin32` <br/><br/>
-`pip install keyboard` <br/><br/>
-`pip install pypiwin32` <br/><br/>
+```bash
+pip install pycryptodome pypiwin32
+```
+```bash
+pip install keyboard
+```
+```bash
+pip install pypiwin32
+```
 
 ## Usage
 Server
@@ -38,14 +46,19 @@ The server listens for incoming connections from the client and allows remote co
 ### Running the Server
 Open a terminal or command prompt on your machine.
 Run the server script:
-`python3 OzymandiasClient.py`<br/><br/>
+```bash
+python3 OzymandiasClient.py
+```
+<br/><br/>
 ![image](https://github.com/HeaZzY/Ozymandias/assets/80423488/8e8a6127-4136-4dc8-b743-1d2ddc37961d)
 
 ### Running the Reverse Shell
 
 
 Start the Reverse Shell Client:
-`python3 OzymandiasClient.py`
+```bash
+python3 OzymandiasClient.py
+```
 
 ## Change the IP on the reverse shell:<br/><br/>
 ![image](https://github.com/HeaZzY/Ozymandias/assets/80423488/7edfe3af-e0c7-43fa-ac80-928f68a14a75)
@@ -53,11 +66,16 @@ Start the Reverse Shell Client:
 
 ## (Optionnal) Compile the reverse to exe
 
-`pyinstaller --onefile --noconsole OzymandiasClient.py`<br/><br/>
+```bash
+pyinstaller --onefile --noconsole OzymandiasClient.py
+```
+<br/><br/>
 Now the target have to execute it<br/>
 
 ## #Excute it with python:
-`python3 OzymandiasReverse.py`
+```bash
+python3 OzymandiasReverse.py
+```
 
 The server will establish a connection with the client, enabling remote command execution, file transfers, and other administrative tasks.<br/><br/>
 ![image](https://github.com/HeaZzY/Ozymandias/assets/80423488/87ec58db-5681-43de-a375-ccf5c3182c38)
