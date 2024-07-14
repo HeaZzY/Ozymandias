@@ -72,7 +72,7 @@ pyinstaller --onefile --noconsole OzymandiasClient.py
 <br/><br/>
 Now the target have to execute it<br/>
 
-## #Excute it with python:
+## Excute it with python:
 ```bash
 python3 OzymandiasReverse.py
 ```
